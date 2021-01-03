@@ -11,8 +11,12 @@ async function main() {
 
   const Token = await ethers.getContractFactory("Token");
   const token = await Token.deploy();
-
   console.log("Token address:", token.address);
+
+  const PriceConsumer = await ethers.getContractFactory("PriceConsumerV3");
+  const priceConsumer = await PriceConsumer.deploy();
+  console.log("PriceConsumer address:", priceConsumer.address);
+
 }
 
 main()

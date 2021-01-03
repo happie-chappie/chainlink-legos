@@ -1,4 +1,5 @@
 require("@nomiclabs/hardhat-waffle");
+require("@nomiclabs/hardhat-web3");
 
 /**
  * @type import('hardhat/config').HardhatUserConfig
@@ -11,6 +12,10 @@ module.exports = {
   networks: {
     ropsten: {
       url: `https://ropsten.infura.io/v3/${INFURA_PROJECT_ID}`,
+      accounts: [`0x${ROPSTEN_PRIVATE_KEY}`]
+    },
+    kovan: {
+      url: `https://kovan.infura.io/v3/${INFURA_PROJECT_ID}`,
       accounts: [`0x${ROPSTEN_PRIVATE_KEY}`]
     }
   }
